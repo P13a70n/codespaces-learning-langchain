@@ -28,6 +28,12 @@ st.markdown(
     .stApp input, .stApp textarea { background-color: #fff; }
     .stApp [data-testid="stDateInput"] input, .stApp [data-testid="stDateInput"] button { background: #111 !important; border-color: #111 !important; color: #fff !important; -webkit-text-fill-color: #fff !important; }
     .stApp [data-testid="stDateInput"] input:hover, .stApp [data-testid="stDateInput"] input:focus, .stApp [data-testid="stDateInput"] button:hover, .stApp [data-testid="stDateInput"] button:focus { background: #252525 !important; border-color: #252525 !important; color: #fff !important; -webkit-text-fill-color: #fff !important; }
+    [data-testid="stSidebar"] [data-testid="stFileUploader"] button { background:#111 !important; border-color:#111 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-testid="stSidebar"] [data-testid="stFileUploader"] button:hover, [data-testid="stSidebar"] [data-testid="stFileUploader"] button:focus, [data-testid="stSidebar"] [data-testid="stFileUploader"] button:active { background:#252525 !important; border-color:#252525 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] [data-baseweb="select"] > div { background:#fff !important; border-color:#64716a !important; }
+    [data-testid="stSidebar"] [data-testid="stSelectbox"] [data-baseweb="select"] *, [data-baseweb="popover"] [role="listbox"], [data-baseweb="popover"] [role="option"] { color:#18221f !important; -webkit-text-fill-color:#18221f !important; }
+    [data-baseweb="popover"] [role="listbox"], [data-baseweb="popover"] [role="option"] { background:#fff !important; }
+    [data-baseweb="popover"] [role="option"]:hover, [data-baseweb="popover"] [role="option"][aria-selected="true"] { background:#e9eee5 !important; color:#18221f !important; }
     [data-testid="stHeader"] { background: transparent; }
     [data-testid="stSidebar"] { background: #e9eee5; border-right: 1px solid var(--line); }
     [data-testid="stSidebar"] h1 { font-size: 1.35rem; }
