@@ -26,8 +26,28 @@ st.markdown(
     .stApp [data-testid="stCaptionContainer"], .stApp [data-testid="stMetricLabel"] { color: var(--muted) !important; }
     .stApp input, .stApp textarea, .stApp [data-testid="stDateInput"] *, .stApp [data-testid="stSelectbox"] *, .stApp [data-baseweb="calendar"] * { color: var(--ink) !important; }
     .stApp input, .stApp textarea { background-color: #fff; }
-    .stApp [data-testid="stDateInput"] input, .stApp [data-testid="stDateInput"] button { background: #111 !important; border-color: #111 !important; color: #fff !important; -webkit-text-fill-color: #fff !important; }
-    .stApp [data-testid="stDateInput"] input:hover, .stApp [data-testid="stDateInput"] input:focus, .stApp [data-testid="stDateInput"] button:hover, .stApp [data-testid="stDateInput"] button:focus { background: #252525 !important; border-color: #252525 !important; color: #fff !important; -webkit-text-fill-color: #fff !important; }
+    .stApp [data-testid="stDateInput"] input, .stApp [data-testid="stDateInput"] button, .stApp [data-testid="stDateInput"] button * { background: #111 !important; border-color: #111 !important; color: #fff !important; -webkit-text-fill-color: #fff !important; }
+    .stApp [data-testid="stDateInput"] input:hover, .stApp [data-testid="stDateInput"] input:focus, .stApp [data-testid="stDateInput"] button:hover, .stApp [data-testid="stDateInput"] button:focus, .stApp [data-testid="stDateInput"] button:hover *, .stApp [data-testid="stDateInput"] button:focus * { background: #252525 !important; border-color: #252525 !important; color: #fff !important; -webkit-text-fill-color: #fff !important; }
+    
+    /* Force date picker text white */
+    [data-testid="stDateInput"] input,
+    [data-testid="stDateInput"] input *,
+    [data-testid="stDateInput"] div,
+    [data-testid="stDateInput"] div *,
+    [data-testid="stDateInput"] span,
+    [data-testid="stDateInput"] span * {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+    }
+
+    
+    [data-baseweb="calendar"], [data-baseweb="popover"] [data-baseweb="calendar"] { background-color:#111 !important; color:#fff !important; }
+    [data-baseweb="calendar"] *, [data-baseweb="popover"] [data-baseweb="calendar"] * { background-color:#111 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-baseweb="calendar"] button, [data-baseweb="popover"] [data-baseweb="calendar"] button { background-color:#111 !important; border-color:#111 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-baseweb="calendar"] button *, [data-baseweb="calendar"] button svg, [data-baseweb="calendar"] button svg *, [data-baseweb="popover"] [data-baseweb="calendar"] button *, [data-baseweb="popover"] [data-baseweb="calendar"] button svg, [data-baseweb="popover"] [data-baseweb="calendar"] button svg * { color:#fff !important; fill:#fff !important; stroke:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-baseweb="calendar"] button:hover, [data-baseweb="calendar"] [role="gridcell"]:hover, [data-baseweb="calendar"] [role="gridcell"]:hover *, [data-baseweb="calendar"] td:hover, [data-baseweb="calendar"] td:hover *, [data-baseweb="popover"] [data-baseweb="calendar"] button:hover, [data-baseweb="popover"] [data-baseweb="calendar"] [role="gridcell"]:hover, [data-baseweb="popover"] [data-baseweb="calendar"] [role="gridcell"]:hover *, [data-baseweb="popover"] [data-baseweb="calendar"] td:hover, [data-baseweb="popover"] [data-baseweb="calendar"] td:hover * { background-color:#343434 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-baseweb="calendar"] [aria-selected="true"], [data-baseweb="calendar"] [aria-selected="true"] *, [data-baseweb="calendar"] [data-selected="true"], [data-baseweb="calendar"] [data-selected="true"] *, [data-baseweb="calendar"] [aria-pressed="true"], [data-baseweb="calendar"] [aria-pressed="true"] *, [data-baseweb="popover"] [data-baseweb="calendar"] [aria-selected="true"], [data-baseweb="popover"] [data-baseweb="calendar"] [aria-selected="true"] *, [data-baseweb="popover"] [data-baseweb="calendar"] [data-selected="true"], [data-baseweb="popover"] [data-baseweb="calendar"] [data-selected="true"] *, [data-baseweb="popover"] [data-baseweb="calendar"] [aria-pressed="true"], [data-baseweb="popover"] [data-baseweb="calendar"] [aria-pressed="true"] * { background-color:#343434 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-baseweb="calendar"] th, [data-baseweb="calendar"] abbr, [data-baseweb="calendar"] [aria-label], [data-baseweb="calendar"] [disabled], [data-baseweb="popover"] [data-baseweb="calendar"] th, [data-baseweb="popover"] [data-baseweb="calendar"] abbr, [data-baseweb="popover"] [data-baseweb="calendar"] [aria-label], [data-baseweb="popover"] [data-baseweb="calendar"] [disabled] { color:#fff !important; -webkit-text-fill-color:#fff !important; opacity:1 !important; }
     [data-testid="stSidebar"] [data-testid="stFileUploader"] button { background:#111 !important; border-color:#111 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
     [data-testid="stSidebar"] [data-testid="stFileUploader"] button:hover, [data-testid="stSidebar"] [data-testid="stFileUploader"] button:focus, [data-testid="stSidebar"] [data-testid="stFileUploader"] button:active { background:#252525 !important; border-color:#252525 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
     [data-testid="stSidebar"] [data-testid="stSelectbox"] [data-baseweb="select"] > div { background:#fff !important; border-color:#64716a !important; }
@@ -51,8 +71,10 @@ st.markdown(
     div[data-testid="stDataFrame"] { border:1px solid var(--line); border-radius:8px; }
     .stButton > button[kind="primary"] { background:var(--green); border-color:var(--green); }
     .stButton > button { border-radius:6px; }
-    [data-testid="stSidebar"] .stButton > button { background:#111; border-color:#111; color:#fff; }
-    [data-testid="stSidebar"] .stButton > button:hover, [data-testid="stSidebar"] .stButton > button:focus, [data-testid="stSidebar"] .stButton > button:active { background:#252525; border-color:#252525; color:#fff; }
+    [data-testid="stSidebar"] .stButton > button, [data-testid="stSidebar"] .stButton > button * { background:#111 !important; border-color:#111 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-testid="stSidebar"] .stButton > button:hover, [data-testid="stSidebar"] .stButton > button:focus, [data-testid="stSidebar"] .stButton > button:active, [data-testid="stSidebar"] .stButton > button:hover *, [data-testid="stSidebar"] .stButton > button:focus *, [data-testid="stSidebar"] .stButton > button:active * { background:#252525 !important; border-color:#252525 !important; color:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-testid="stDownloadButton"] button, [data-testid="stDownloadButton"] button * { background:#111 !important; border-color:#111 !important; color:#fff !important; fill:#fff !important; -webkit-text-fill-color:#fff !important; }
+    [data-testid="stDownloadButton"] button:hover, [data-testid="stDownloadButton"] button:focus, [data-testid="stDownloadButton"] button:active, [data-testid="stDownloadButton"] button:hover *, [data-testid="stDownloadButton"] button:focus *, [data-testid="stDownloadButton"] button:active * { background:#252525 !important; border-color:#252525 !important; color:#fff !important; fill:#fff !important; -webkit-text-fill-color:#fff !important; }
     </style>
     <div class="brand"><div class="brand-mark">D</div><div><div class="brand-name">Daybook</div><div class="brand-sub">SALES INTELLIGENCE</div></div></div>
     """,
